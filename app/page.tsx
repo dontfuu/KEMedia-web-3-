@@ -136,4 +136,103 @@ export default function Home() {
           </p>
         </div>
       </section>
+      {/* Portfolio */}
+      <section id="portfolio" className="section bg-neutral-50 dark:bg-neutral-900/30">
+        <div className="container">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Portfolio chọn lọc</h2>
+          <p className="text-neutral-500 dark:text-neutral-400 mb-8">Một số dự án tiêu biểu. Có thể cung cấp thêm case-study theo yêu cầu.</p>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[1,2,3,4,5,6].map((i) => (
+              <div key={i} className="group relative overflow-hidden rounded-2xl border bg-neutral-100 dark:bg-neutral-800 h-56">
+                <div className="absolute inset-0 flex items-center justify-center text-neutral-400 dark:text-neutral-500 text-sm">
+                  + Ảnh / Video Demo {i}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section id="process" className="section">
+        <div className="container">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Quy trình 3 ngày</h2>
+          <p className="text-neutral-500 dark:text-neutral-400 mb-8">Chuẩn hoá để tăng tốc – giảm vòng lặp – đảm bảo chất lượng.</p>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="p-6 rounded-2xl border bg-white dark:bg-neutral-900 dark:border-neutral-800">
+              <h3 className="font-semibold text-lg mb-1">Ngày 1 – Brief & Concept</h3>
+              <p className="text-sm text-neutral-500 dark:text-neutral-400">Chốt concept, shotlist, đặt cọc 50–70%.</p>
+            </div>
+            <div className="p-6 rounded-2xl border bg-white dark:bg-neutral-900 dark:border-neutral-800">
+              <h3 className="font-semibold text-lg mb-1">Ngày 2 – Quay / Chụp</h3>
+              <p className="text-sm text-neutral-500 dark:text-neutral-400">Chọn raw, dựng nháp layout, gửi preview nhanh.</p>
+            </div>
+            <div className="p-6 rounded-2xl border bg-white dark:bg-neutral-900 dark:border-neutral-800">
+              <h3 className="font-semibold text-lg mb-1">Ngày 3 – Hậu kỳ & Giao file</h3>
+              <p className="text-sm text-neutral-500 dark:text-neutral-400">Hoàn thiện – gỡ watermark sau thanh toán phần còn lại.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="section bg-neutral-50 dark:bg-neutral-900/30">
+        <div className="container grid md:grid-cols-2 gap-10 items-start">
+
+          {/* Contact info box */}
+          <div className="space-y-4">
+            <h2 className="text-3xl md:text-4xl font-bold">Bắt đầu ngay hôm nay</h2>
+            <p className="text-neutral-500 dark:text-neutral-400">
+              Gửi 3 đề xuất concept phù hợp trong 12 giờ làm việc. Ưu tiên lịch quay trong 24 giờ cho gói Combo.
+            </p>
+
+            <div className="p-5 rounded-2xl border bg-white dark:bg-neutral-900 dark:border-neutral-800 space-y-3">
+              <a href="mailto:kemedia2025@gmail.com" className="flex items-center gap-2 hover:opacity-80">
+                <Mail size={18} /> kemedia2025@gmail.com
+              </a>
+              <a href="tel:0912031975" className="flex items-center gap-2 hover:opacity-80">
+                <Phone size={18} /> 0912031975
+              </a>
+              <p className="text-sm text-neutral-500 dark:text-neutral-400 flex items-center gap-1">
+                <Star size={14} /> Ưu tiên lịch quay trong 24h với gói Combo
+              </p>
+            </div>
+          </div>
+
+          {/* Form */}
+          <form
+            action="https://formspree.io/f/mjkvwzay"
+            method="POST"
+            className="p-6 rounded-2xl border bg-white dark:bg-neutral-900 dark:border-neutral-800 space-y-3"
+          >
+            <input className="w-full p-3 rounded-lg border dark:border-neutral-700 bg-transparent" name="name" placeholder="Tên doanh nghiệp / cá nhân" required />
+            <input type="email" className="w-full p-3 rounded-lg border dark:border-neutral-700 bg-transparent" name="email" placeholder="Email" required />
+            <input type="tel" className="w-full p-3 rounded-lg border dark:border-neutral-700 bg-transparent" name="phone" placeholder="Số điện thoại" required />
+
+            <select className="w-full p-3 rounded-lg border dark:border-neutral-700 bg-transparent" name="service">
+              <option>Video</option>
+              <option>Ảnh</option>
+              <option>Combo</option>
+            </select>
+
+            <textarea className="w-full p-3 rounded-lg border dark:border-neutral-700 bg-transparent" name="message" rows={4} placeholder="Mô tả nhanh sản phẩm / mục tiêu" />
+
+            <button type="submit" className="w-full py-3 rounded-lg bg-black text-white dark:bg-white dark:text-black hover:opacity-80 transition">
+              Gửi yêu cầu
+            </button>
+          </form>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-10 border-t dark:border-neutral-800">
+        <div className="container text-center text-sm text-neutral-500 dark:text-neutral-400">
+          © {new Date().getFullYear()} KẾ Media. All rights reserved.
+        </div>
+      </footer>
+    </div>
+  );
+}
 
